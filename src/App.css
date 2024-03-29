@@ -1,11 +1,11 @@
 #thin-border{
-    border: .03rem solid white;
+    border: .03rem solid rgb(59, 59, 59);
     border-radius: 10px;
 }
 
 #rounded{
     border-radius: 10px;
-    color: red;
+    
 }
 
 .boxshadow{

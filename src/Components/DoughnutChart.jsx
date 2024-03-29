@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Chart from "chart.js/auto"
+import { AiOutlineCaretDown } from "react-icons/ai";
 
 const DoughnutChart = () => {
     const chartRef = useRef(null);
@@ -13,16 +14,17 @@ const DoughnutChart = () => {
       chartInstance.current= new Chart(myChartRef, {
         type:"doughnut",
         data:{
-            labels:[
-                "Red","Blue", "Green"
-            ],
+            // labels:[
+            //     "Red","Blue", "Green"
+            // ],
             datasets:[
                {
-                data:[30, 45, 25],
+                data:[2.04, 40.04, 20.41, 4.08],
                 backgroundColor:[
-                "rgb(255, 0, 0)",
-                "rgb(0, 255, 0)",
-                "rgb(0, 0, 255)"
+                "red",
+                "blue",
+                "orange",
+                "green"
             ]}
             ],
             
@@ -36,8 +38,11 @@ const DoughnutChart = () => {
     }, [])
     
   return (
-    <div className="h-full  flex items-center justify-center">
-        <canvas ref={chartRef} style={{width:"300px", height:"200px"}} />
+    <div className="h-full relative flex items-center justify-center">
+        <div className="border-4 relative rounded-full" style={{width:"320px", height:"320px"}}>
+        <AiOutlineCaretDown className="absolute -top-4 left-[43%] right-[43%] z-50 text-5xl font-bold" />
+        <canvas className="px-1 pb-2" ref={chartRef} style={{width:"100%", height:"100%", offset:"20px"}} />
+        </div>
     </div>
   )
 }
