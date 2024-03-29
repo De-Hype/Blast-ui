@@ -1,5 +1,6 @@
 import { FaArrowLeft, FaArrowRight, FaHistory } from "react-icons/fa";
 import { RxTrackNext } from "react-icons/rx";
+import DoughnutChart from "../Components/DoughnutChart";
 
 const RoundCircleBox = () => {
   return (
@@ -22,6 +23,9 @@ const RoundCircleBox = () => {
             <RxTrackNext className="font-thin" />
           </div>
         </div>
+      </div>
+      <div className=" flex items-center justify-center h-full">
+        <DoughnutChart />
       </div>
     </div>
   );

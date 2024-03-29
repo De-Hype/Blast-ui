@@ -8,6 +8,7 @@ const RoundCounter = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setTime((prevTime) => prevTime - 1);
+      setShowTime(true)
     }, 1000);
     return () => clearInterval(timer);
   }, []);
