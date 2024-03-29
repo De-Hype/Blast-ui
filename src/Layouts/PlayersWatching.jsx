@@ -4,33 +4,41 @@ import { PlayerData } from "../lib/PlayerData";
 import react from "../assets/react.svg";
 const PlayersWatching = () => {
   return (
-    <div className="">
-      <div className="flex items-center justify-between">
+    <div id="thin-border" className="bg-slate-950  text-white px-3 w-1/4 py-3">
+      <div className="flex items-center font-semibold justify-between">
         <h3 className="">7 Players</h3>
-        <div className="flex items-center">
-          <h3 className="">102 Watching</h3> <AiOutlineEye className="" />{" "}
+        <div className="flex items-center gap-1 text-lime-300">
+          <h3 className="">102 Watching</h3> <AiOutlineEye className="text-2xl" />
         </div>
       </div>
       <div className="">
         {PlayerData?.map((value, index) => (
-          <div className="flex items-center" key={index}>
-            <div className="flex items-center justify-between">
-              <img src={react || value.image} alt="" />
-              <div className="">
-                <h3 className=""> {value.name} </h3>
-                <p className="">{value.points}</p>
+          <div id="rounded" className="flex bg-red-600  border items-center     my-2  w-full" key={index}>
+            <div className="flex boxshadow rounded-l-md bg-slate-900 px-1 py-2 w-[90%] h-[100]   items-center  justify-between">
+              <div className="flex  gap-2 items-center">
+                <img
+                  src={react || value.image}
+                  className="w-8 h-8 rounded-full"
+                  alt=""
+                />
+                <div className="flex flex-col">
+                  <h3 className="text-sm"> {value.name} </h3>
+                  <p className="">{value.points}K Pts</p>
+                </div>
               </div>
               <div className="">
-                <h3 className="">{value.percent}%</h3>
-                <div className="">
+                <h3 className="font-extrabold">{value.percent}%</h3>
+                <div className="flex gap-2 items-center">
                   <p className="">{value.amount}</p>
-                  <span className="">
-                    <FaEthereum className="" />{" "}
+                  <span className="bg-white px-1 py-1 rounded-full">
+                    <FaEthereum className="text-black text-xs" />{" "}
                   </span>
                 </div>
               </div>
             </div>
-            <div className=""></div>
+            <div className=" w-1/12  h-[100]">
+
+            </div>
           </div>
         ))}
       </div>

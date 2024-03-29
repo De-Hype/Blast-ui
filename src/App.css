@@ -1,0 +1,12 @@
+#thin-border{
+    border: .03rem solid white;
+    border-radius: 10px;
+}
+
+#rounded{
+    border-radius: 10px;
+}
+
+.boxshadow{
+    background: radial-gradient(circle at top left, rgba(220, 241, 80, 0.8), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ,rgba(0, 0, 0, 0.2));
+}
