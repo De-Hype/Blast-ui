@@ -67,7 +67,7 @@ const RoundCounter = () => {
           <p className="text-sm text-slate-400">Players</p>
         </div>
       </div>
-      <div className="border-t py-4 grid grid-cols-2">
+      <div className="border-t border-slate-500 py-4 grid grid-cols-2">
       <div className="">
          <h3 className="text-slate-500 text-xl font-semibold">0%</h3>
           <p className="text-sm text-slate-400">Players</p>

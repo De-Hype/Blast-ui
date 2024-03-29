@@ -6,7 +6,7 @@ export const PlayerData = [
         "percent":2.04,
         "amount":0.01,
         "image":"",
-        "color":"bg-red-500"
+        "color":"bg-red-600"
     },
     {
         "id":2,
@@ -15,7 +15,7 @@ export const PlayerData = [
         "percent":40.04,
         "amount":0.2,
         "image":"",
-        "color":"bg-blue-500"
+        "color":"bg-blue-600"
     },
     {
         "id":3,
@@ -24,7 +24,7 @@ export const PlayerData = [
         "percent":20.41,
         "amount":0.1,
         "image":"",
-        "color":"bg-orange-500"
+        "color":"bg-orange-400"
     },
     {
         "id":4,
@@ -33,6 +33,6 @@ export const PlayerData = [
         "percent":4.08,
         "amount":0.02,
         "image":"",
-        "color":"bg-green-500"
+        "color":"bg-green-700"
     },
 ]

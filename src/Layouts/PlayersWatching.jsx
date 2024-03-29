@@ -14,7 +14,7 @@ const PlayersWatching = () => {
       <div className="">
         {PlayerData?.map((value, index) => (
           <div id="rounded" className={`flex   border border-slate-600 items-center     my-4  w-full ${value.color}`} key={index}>
-            <div className="flex boxshadow rounded-l-md bg-slate-900 px-1 py-2 w-[90%] h-[100]   items-center  justify-between">
+            <div className="flex boxshadow rounded-l-md bg-slate-900 px-2 py-2 w-[90%] h-[100]   items-center  justify-between">
               <div className="flex  gap-2 items-center">
                 <img
                   src={react || value.image}
@@ -22,7 +22,7 @@ const PlayersWatching = () => {
                   alt=""
                 />
                 <div className="flex flex-col">
-                  <h3 className="text-sm text-white"> {value.name} </h3>
+                  <h3 className="text-sm text-slate-300"> {value.name} </h3>
                   <p className="">{value.points}K Pts</p>
                 </div>
               </div>
