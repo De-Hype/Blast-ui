@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Chart from "chart.js/auto"
 import { AiOutlineCaretDown } from "react-icons/ai";
+import { PlayerData } from "../lib/PlayerData";
 
 const DoughnutChart = () => {
     const chartRef = useRef(null);
@@ -19,13 +20,9 @@ const DoughnutChart = () => {
             // ],
             datasets:[
                {
-                data:[2.04, 40.04, 20.41, 4.08],
-                backgroundColor:[
-                "red",
-                "blue",
-                "orange",
-                "green"
-            ]}
+                data: PlayerData.map(player => player.bet_percent),
+                backgroundColor:PlayerData.map(player => player.chart_color)
+              }
             ],
             
         }

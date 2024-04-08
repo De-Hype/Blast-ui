@@ -6,7 +6,10 @@ export const PlayerData = [
         "percent":2.04,
         "amount":0.01,
         "image":"",
-        "color":"bg-red-600"
+        "color":"bg-red-600",
+        "bet_percent":2.04,
+        "chart_color":"red"
+
     },
     {
         "id":2,
@@ -15,7 +18,9 @@ export const PlayerData = [
         "percent":40.04,
         "amount":0.2,
         "image":"",
-        "color":"bg-blue-600"
+        "color":"bg-blue-600",
+        "bet_percent":40.04,
+        "chart_color":"blue"
     },
     {
         "id":3,
@@ -24,7 +29,9 @@ export const PlayerData = [
         "percent":20.41,
         "amount":0.1,
         "image":"",
-        "color":"bg-orange-400"
+        "color":"bg-orange-400",
+        "bet_percent":20.41,
+        "chart_color": "orange"
     },
     {
         "id":4,
@@ -33,6 +40,8 @@ export const PlayerData = [
         "percent":4.08,
         "amount":0.02,
         "image":"",
-        "color":"bg-green-700"
+        "color":"bg-green-700",
+        "bet_percent":4.08,
+        "chart_color":"green"
     },
 ]
