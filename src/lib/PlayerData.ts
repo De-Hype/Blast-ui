@@ -1,4 +1,15 @@
-export const PlayerData = [
+interface Player{
+    id:number;
+    name:String;
+    points:number;
+    percent:number;
+    amount:number;
+    image:String;
+    color:String;
+    bet_percent:number;
+    chart_color:string;
+}
+export const PlayerData:Player[] = [
     {
         "id":1,
         "name":"Web3gamed",

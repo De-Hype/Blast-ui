@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaEthereum } from "react-icons/fa";
 import { FaHistory } from "react-icons/fa";
 
-const RoundCounter = () => {
-  const [showTime, setShowTime] = useState(false);
-  const [time, setTime] = useState(15);
+const RoundCounter:React.FC = () => {
+  const [showTime, setShowTime] = useState<boolean>(false);
+  const [time, setTime] = useState<number>(15);
   useEffect(() => {
     const timer = setInterval(() => {
       setTime((prevTime) => prevTime - 1);
@@ -12,7 +12,7 @@ const RoundCounter = () => {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-  const formatTime = (time) => {
+  const formatTime = (time:number) => {
     return time < 10 ? `0${time}` : time;
   };
 

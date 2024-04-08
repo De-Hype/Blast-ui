@@ -1,8 +1,9 @@
 import { FaArrowLeft, FaArrowRight, FaHistory } from "react-icons/fa";
 import { RxTrackNext } from "react-icons/rx";
 import DoughnutChart from "../Components/DoughnutChart";
+import React from "react";
 
-const RoundCircleBox = () => {
+const RoundCircleBox:React.FC = () => {
   return (
     <div id="thin-border" className="bg-slate-950  text-white px-3 font-bold w-2/5 py-3">
       <div className="flex items-center justify-between">

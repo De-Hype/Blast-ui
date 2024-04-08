@@ -2,7 +2,8 @@ import { AiOutlineEye } from "react-icons/ai";
 import { FaEthereum } from "react-icons/fa";
 import { PlayerData } from "../lib/PlayerData";
 import react from "../assets/react.svg";
-const PlayersWatching = () => {
+import React from "react";
+const PlayersWatching:React.FC = () => {
   return (
     <div id="thin-border" className="bg-slate-950  text-white px-3 w-1/4 py-3">
       <div className="flex items-center font-semibold justify-between">
