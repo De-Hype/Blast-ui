@@ -3,7 +3,7 @@ import { FaEthereum } from "react-icons/fa";
 import { FaHistory } from "react-icons/fa";
 
 const RoundCounter:React.FC = () => {
-  const [showTime, setShowTime] = useState<boolean>(false);
+  const [showTime, setShowTime] = useState<boolean>(true);
   const [time, setTime] = useState<number>(15);
   useEffect(() => {
     const timer = setInterval(() => {
