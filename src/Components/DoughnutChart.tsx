@@ -6,26 +6,30 @@ import { PlayerData } from "../lib/PlayerData";
 const DoughnutChart = ():JSX.Element => {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstance = useRef<Chart<"doughnut">|null>(null);
-  const canvasRef = useRef(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
   const duration = 1000 
   useEffect(() => {
-    // const cvs:any = canvasRef.current;
-    // const ctx:any = cvs.getContext("2d");
-    // cvs.width = window.innerWidth;
-    // cvs.height = window.innerHeight;
-    // const circle ={
-    //   angle:Math.PI,
-    //   angle2:3/2 * Math.PI,
-    //   velocity:(Math.PI / 80) * (30/duration),
-    //   index:1,
-    //   bg:"rgb(107, 172, 47)",
-    //   round:0,
+    const cvs:any = canvasRef.current;
+    const ctx:any = cvs.getContext("2d");
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+    const circle ={
+      angle:Math.PI,
+      angle2:3/2 * Math.PI,
+      velocity:(Math.PI / 80) * (30/duration),
+      index:1,
+      bg:"rgb(107, 172, 47)",
+      round:0,
       
-    //   position:[
-    //   {x:cvs.width / 2, y:cvs:height / 2 - 100, r:30, c:"yellow"},
-    //   {x:cvs}
-    // ]
-    // };
+      position:[
+      {x:cvs.width / 2, y:cvs:height / 2 - 100, r:30, c:"yellow"},
+      {x:cvs.width / 2, y:cvs:height / 2 - 100, r:150, c:"yellow"},
+      {x:cvs.width / 2, y:cvs:height / 2 - 100, r:150, c:"green"},
+    ],
+    draw:function(){
+      ctx.beginPath
+    }
+    };
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
