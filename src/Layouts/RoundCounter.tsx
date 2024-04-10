@@ -4,12 +4,13 @@ import { FaHistory } from "react-icons/fa";
 
 const RoundCounter:React.FC = () => {
   const [showTime, setShowTime] = useState<boolean>(true);
-  const [time, setTime] = useState<number>(15);
+  const [time, setTime] = useState<number>(45);
   useEffect(() => {
     const timer = setInterval(() => {
       setTime((prevTime) => prevTime - 1);
       setShowTime(true)
     }, 1000);
+    
     return () => clearInterval(timer);
   }, []);
   const formatTime = (time:number) => {
@@ -23,7 +24,7 @@ const RoundCounter:React.FC = () => {
     >
       <div className="flex items-center justify-between">
         <h3 className="font-bold">Round #17761</h3>
-        {showTime ? (
+        {!showTime ? (
           <div
             id="thin-border"
             className="flex items-center  px-5 py-2 rounded-md"

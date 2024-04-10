@@ -6,7 +6,26 @@ import { PlayerData } from "../lib/PlayerData";
 const DoughnutChart = ():JSX.Element => {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstance = useRef<Chart<"doughnut">|null>(null);
+  const canvasRef = useRef(null)
+  const duration = 1000 
   useEffect(() => {
+    // const cvs:any = canvasRef.current;
+    // const ctx:any = cvs.getContext("2d");
+    // cvs.width = window.innerWidth;
+    // cvs.height = window.innerHeight;
+    // const circle ={
+    //   angle:Math.PI,
+    //   angle2:3/2 * Math.PI,
+    //   velocity:(Math.PI / 80) * (30/duration),
+    //   index:1,
+    //   bg:"rgb(107, 172, 47)",
+    //   round:0,
+      
+    //   position:[
+    //   {x:cvs.width / 2, y:cvs:height / 2 - 100, r:30, c:"yellow"},
+    //   {x:cvs}
+    // ]
+    // };
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
@@ -39,7 +58,7 @@ const DoughnutChart = ():JSX.Element => {
     <div className="h-full relative flex items-center justify-center">
       <div
         className="border-4 relative rounded-full"
-        style={{ width: "320px", height: "320px" }}
+        style={{ width: "370px", height: "370px" }}
       >
         <AiOutlineCaretDown className="absolute -top-4 left-[43%] right-[43%] z-50 text-5xl font-bold" />
         <canvas
