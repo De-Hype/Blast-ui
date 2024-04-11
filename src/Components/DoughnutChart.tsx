@@ -6,7 +6,6 @@ import { PlayerData } from "../lib/PlayerData";
 const DoughnutChart = (): JSX.Element => {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstance = useRef<Chart<"doughnut"> | null>(null);
-  // const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
     if (chartInstance.current) {
@@ -17,9 +16,6 @@ const DoughnutChart = (): JSX.Element => {
       chartInstance.current = new Chart(myChartRef, {
         type: "doughnut",
         data: {
-          // labels:[
-          //     "Red","Blue", "Green"
-          // ],
           datasets: [
             {
               data: PlayerData.map((player) => player.bet_percent),
@@ -36,11 +32,6 @@ const DoughnutChart = (): JSX.Element => {
       }
     };
   }, []); 
-
-  // const radius = 50;
-  // const centerX = 100;
-  // const centerY = 100;
-  //const circumference = 2 * Math.PI * radius;
 
   return (
     <div className="h-full relative flex items-center justify-center">
@@ -63,11 +54,12 @@ const DoughnutChart = (): JSX.Element => {
 
 export default DoughnutChart;
 
-const CircleAnimation: JSX.Element = () => {
+const CircleAnimation: React.FC = ({ children }) => {
   const duration = 45000;
   const [progress, setProgress] = useState(0);
   const radius = 400 / 2;
   const circumference = 2 * Math.PI * radius;
+  
   useEffect(() => {
     let startTime;
     let animationFrameId;
@@ -83,21 +75,24 @@ const CircleAnimation: JSX.Element = () => {
     animationFrameId = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(animationFrameId);
   }, [duration]);
+
   const strokeDashOffset = circumference * (1 - progress);
+  
   return (
     <div className="">
-      <svg color="white" width={400} height={400}>
+      <svg width={400} height={400}>
         <circle
           cx={radius}
           cy={radius}
           r={radius}
           fill="transparent"
-          stroke="black"
+          stroke="white" // Change stroke color to white
           strokeWidth="3"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashOffset}
         />
       </svg>
+      {children}
     </div>
   );
 };
