@@ -35,7 +35,7 @@ const DoughnutChart = (): JSX.Element => {
         chartInstance.current.destroy();
       }
     };
-  }, []);
+  }, []); 
 
   // const radius = 50;
   // const centerX = 100;
