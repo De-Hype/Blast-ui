@@ -3,7 +3,7 @@ import Chart from "chart.js/auto";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { PlayerData } from "../lib/PlayerData";
 
-const DoughnutChart = (): JSX.Element => {
+const DoughnutChart: React.FC = () => {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstance = useRef<Chart<"doughnut"> | null>(null);
 
@@ -31,7 +31,7 @@ const DoughnutChart = (): JSX.Element => {
         chartInstance.current.destroy();
       }
     };
-  }, []); 
+  }, []);
 
   return (
     <div className="h-full relative flex items-center justify-center">
@@ -61,10 +61,10 @@ const CircleAnimation: React.FC = ({ children }) => {
   const circumference = 2 * Math.PI * radius;
   
   useEffect(() => {
-    let startTime;
-    let animationFrameId;
+    let startTime: number | undefined;
+    let animationFrameId: number;
 
-    const draw = (timestamp) => {
+    const draw = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min(1, (timestamp - startTime) / duration);
       setProgress(progress);
@@ -79,14 +79,14 @@ const CircleAnimation: React.FC = ({ children }) => {
   const strokeDashOffset = circumference * (1 - progress);
   
   return (
-    <div className="">
-      <svg width={400} height={400}>
+    <div className="relative" style={{ width: `${radius * 2}px`, height: `${radius * 2}px` }}>
+      <svg width="100%" height="100%">
         <circle
           cx={radius}
           cy={radius}
           r={radius}
           fill="transparent"
-          stroke="white" // Change stroke color to white
+          stroke="white"
           strokeWidth="3"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashOffset}
@@ -94,7 +94,9 @@ const CircleAnimation: React.FC = ({ children }) => {
           {children}
         </circle>
       </svg>
-      
+      <div className="absolute inset-0 flex items-center justify-center">
+        {children}
+      </div>
     </div>
   );
 };
