@@ -90,9 +90,11 @@ const CircleAnimation: React.FC = ({ children }) => {
           strokeWidth="3"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashOffset}
-        />
+        >
+          {children}
+        </circle>
       </svg>
-      {children}
+      
     </div>
   );
 };
