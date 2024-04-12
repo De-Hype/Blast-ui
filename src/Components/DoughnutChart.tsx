@@ -50,12 +50,11 @@ const DoughnutChart: React.FC = () => {
 export default DoughnutChart;
 
 const CircleAnimation: React.FC = ({ children }) => {
-  const duration = 45000;
+  const duration = 46000;
   const [progress, setProgress] = useState(0);
   const [color, setColor] = useState("black");
   const radius = 400 / 2;
   const circumference = 2 * Math.PI * radius;
-
   useEffect(() => {
     let startTime: number | undefined;
     let animationFrameId: number;
@@ -67,11 +66,13 @@ const CircleAnimation: React.FC = ({ children }) => {
       if (progress === 1) {
         setColor("white");
       }
+      
       if (progress < 1) {
         animationFrameId = requestAnimationFrame(draw);
       }
     };
     animationFrameId = requestAnimationFrame(draw);
+    
     return () => cancelAnimationFrame(animationFrameId);
   }, [duration]);
 
@@ -84,19 +85,19 @@ const CircleAnimation: React.FC = ({ children }) => {
     >
       <div
         style={{ width: "400px", height: "400px", border: "3px solid white" }}
-        className="absolute -z-10 rounded-full"
+        className="absolute  rounded-full"
       ></div>
-      <svg className="z-50" width="100%" height="100%">
+      <svg className="z-50 -rotate-90" width="100%" height="100%">
         <circle
           cx={radius}
           cy={radius}
           r={radius}
           fill="transparent"
-          stroke="#F3F4F6"
-          strokeWidth="4"
+          stroke="rgba(28, 27, 27, 0.9)"
+          strokeWidth="10"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashOffset}
-          className="z-30"
+          className="z-30 border border-red-500"
         >
           {children}
         </circle>
